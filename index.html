@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Made Adi Laksmana | Portfolio</title>
+  <meta name="description" content="Made Adi Laksmana — Manager at PT Korintiga Hutani (Oji Group) and Technical Advisor with over a decade of experience in audit, quality assurance, and financial reporting.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --accent: #8a4a0b;
+      --accent-dark: #6b3907;
+      --accent-soft: #f6efe7;
+      --ink: #1d1d1d;
+      --text: #3a3a3a;
+      --muted: #707070;
+      --rule: #d9d4ce;
+      --bg: #ffffff;
+      --sidebar-bg: #fbf8f5;
+      --font: Calibri, "Carlito", "Source Sans 3", "Segoe UI", Arial, sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font);
+      font-size: 17px;
+      line-height: 1.6;
+      color: var(--text);
+      background: #efebe6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* ---------- Page shell ---------- */
+    .page {
+      max-width: 1180px;
+      margin: 48px auto;
+      background: var(--bg);
+      display: grid;
+      grid-template-columns: 340px 1fr;
+      box-shadow: 0 20px 60px rgba(60, 35, 10, 0.12);
+    }
+
+    /* ---------- Sidebar ---------- */
+    .sidebar {
+      background: var(--sidebar-bg);
+      padding: 56px 40px;
+      border-right: 1px solid var(--rule);
+    }
+
+    .sidebar-inner { position: sticky; top: 40px; }
+
+    .photo-frame {
+      border-top: 5px solid var(--accent);
+      border-bottom: 5px solid var(--accent);
+      padding: 14px 0;
+      text-align: center;
+    }
+
+    .photo-frame img {
+      width: 190px;
+      height: 230px;
+      object-fit: cover;
+      object-position: center 20%;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .name {
+      margin-top: 22px;
+      font-size: 28px;
+      font-weight: 400;
+      letter-spacing: 0.02em;
+      line-height: 1.2;
+      color: var(--accent);
+      text-transform: uppercase;
+    }
+
+    .headline {
+      margin-top: 8px;
+      font-size: 15px;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      line-height: 1.5;
+    }
+
+    .divider {
+      border: 0;
+      border-top: 1px solid #555;
+      margin: 26px 0;
+    }
+
+    .side-section + .side-section { margin-top: 34px; }
+
+    .side-title {
+      font-size: 19px;
+      font-weight: 400;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      margin-bottom: 8px;
+    }
+
+    .side-section p { text-align: justify; }
+
+    .contact-list { list-style: none; font-size: 15px; }
+    .contact-list li {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      padding: 5px 0;
+    }
+    .contact-list svg {
+      flex: 0 0 16px;
+      width: 16px; height: 16px;
+      margin-top: 4px;
+      fill: var(--accent);
+    }
+
+    .interest-list { list-style: none; }
+    .interest-list li {
+      position: relative;
+      padding-left: 16px;
+      margin: 4px 0;
+    }
+    .interest-list li::before {
+      content: "";
+      position: absolute;
+      left: 0; top: 0.68em;
+      width: 6px; height: 6px;
+      background: var(--accent);
+      border-radius: 50%;
+    }
+
+    /* ---------- Main ---------- */
+    .main { --pad-x: 60px; padding: 56px var(--pad-x) 64px; }
+
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 26px;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: var(--bg);
+      padding: 18px 0;
+      margin-top: -18px;
+      margin-bottom: 40px;
+      border-bottom: 5px solid var(--accent);
+    }
+    .nav a {
+      color: var(--ink);
+      font-size: 14px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+    .nav a:hover { color: var(--accent); text-decoration: none; }
+
+    .intro {
+      background: var(--accent-soft);
+      border-left: 4px solid var(--accent);
+      padding: 22px 26px;
+      margin-bottom: 44px;
+    }
+    .intro h2 {
+      font-size: 24px;
+      font-weight: 600;
+      color: var(--ink);
+      line-height: 1.3;
+      margin-bottom: 6px;
+    }
+    .intro p { color: var(--text); }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 18px;
+    }
+    .stat {
+      background: #fff;
+      border: 1px solid var(--rule);
+      padding: 14px 16px;
+    }
+    .stat strong {
+      display: block;
+      font-size: 26px;
+      font-weight: 700;
+      color: var(--accent);
+      line-height: 1.1;
+    }
+    .stat span { font-size: 14px; color: var(--muted); }
+
+    .nav::before {
+      content: "";
+      position: absolute;
+      inset: 0 calc(-1 * var(--pad-x));
+      background: var(--bg);
+      z-index: -1;
+    }
+    .nav a.active { color: var(--accent); }
+
+    section { scroll-margin-top: 100px; }
+    section + section { margin-top: 46px; }
+
+    .section-title {
+      font-size: 24px;
+      font-weight: 400;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      margin-bottom: 18px;
+    }
+
+    /* Timeline */
+    .timeline { position: relative; padding-left: 28px; }
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 5px; top: 8px; bottom: 8px;
+      width: 2px;
+      background: var(--rule);
+    }
+
+    .entry { position: relative; }
+    .entry + .entry { margin-top: 30px; }
+    .entry::before {
+      content: "";
+      position: absolute;
+      left: -28px; top: 7px;
+      width: 12px; height: 12px;
+      border-radius: 50%;
+      background: #fff;
+      border: 3px solid var(--accent);
+    }
+    .entry.current::before { background: var(--accent); }
+
+    .entry-title {
+      font-size: 19px;
+      font-weight: 700;
+      color: var(--ink);
+      text-transform: uppercase;
+      line-height: 1.35;
+    }
+    .entry-org {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--ink);
+      text-transform: uppercase;
+    }
+    .entry-date {
+      font-size: 17px;
+      font-weight: 300;
+      color: var(--text);
+      text-transform: uppercase;
+      margin: 2px 0 6px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .badge {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      color: #fff;
+      background: var(--accent);
+      padding: 2px 8px;
+      border-radius: 2px;
+    }
+    .entry p { text-align: justify; }
+
+    /* Education */
+    .edu + .edu { margin-top: 20px; }
+    .edu h3 {
+      font-size: 19px;
+      font-weight: 700;
+      color: var(--ink);
+      text-transform: uppercase;
+    }
+    .edu .school {
+      color: var(--muted);
+      text-transform: uppercase;
+      font-size: 16px;
+    }
+    .edu .date { text-transform: uppercase; font-size: 16px; }
+
+    /* Skills */
+    .skills {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+    .skill {
+      border: 1px solid var(--rule);
+      border-top: 3px solid var(--accent);
+      padding: 16px 18px;
+    }
+    .skill h4 {
+      font-size: 15px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--ink);
+      margin-bottom: 4px;
+    }
+    .skill p { font-size: 16px; }
+
+    footer {
+      margin-top: 56px;
+      padding-top: 18px;
+      border-top: 1px solid var(--rule);
+      font-size: 14px;
+      color: var(--muted);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    /* ---------- Responsive ---------- */
+    @media (max-width: 960px) {
+      .page { grid-template-columns: 1fr; margin: 0; box-shadow: none; }
+      .sidebar { border-right: 0; border-bottom: 1px solid var(--rule); padding: 40px 24px; }
+      .sidebar-inner { position: static; max-width: 560px; margin: 0 auto; }
+      .main { --pad-x: 24px; padding: 40px var(--pad-x) 48px; }
+    }
+
+    @media (max-width: 600px) {
+      body { font-size: 16px; }
+      .sidebar { padding-left: 16px; padding-right: 16px; }
+      .main { --pad-x: 16px; }
+      section { scroll-margin-top: 140px; }
+      .stats, .skills { grid-template-columns: 1fr; }
+      .entry p, .side-section p { text-align: left; }
+      .name { font-size: 25px; }
+    }
+
+    @media print {
+      body { background: #fff; }
+      .page { margin: 0; box-shadow: none; }
+      .nav { display: none; }
+      .sidebar-inner { position: static; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+
+    <!-- ===== Sidebar ===== -->
+    <aside class="sidebar">
+      <div class="sidebar-inner">
+        <div class="photo-frame">
+          <img src="Update%20Photo.png" alt="Portrait of Made Adi Laksmana">
+        </div>
+
+        <h1 class="name">Made Adi Laksmana</h1>
+        <p class="headline">Manager, Accounting &amp; Financial Reporting<br>Audit Quality Assurance</p>
+
+        <hr class="divider">
+
+        <div class="side-section">
+          <h2 class="side-title">Profile</h2>
+          <p>Audit Manager with over 4 years of experience providing direction to over 20 personnel within the engagement team towards the audit engagement. Eager to learn new things, problem solver and able to work collaboratively as part of the team.</p>
+        </div>
+
+        <div class="side-section">
+          <h2 class="side-title">Contact</h2>
+          <ul class="contact-list">
+            <li>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>
+              <a href="mailto:made_adi_laksmana@hotmail.com">made_adi_laksmana@hotmail.com</a>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1L6.6 10.8z"/></svg>
+              <a href="tel:+6281287878189">0812 8787 8189</a>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
+              <span>Tangerang Selatan</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="side-section">
+          <h2 class="side-title">Activities &amp; Interests</h2>
+          <ul class="interest-list">
+            <li>Independent Full Stack Developer enthusiast, learner and hobbyist</li>
+            <li>Books and Novels</li>
+            <li>Travel</li>
+            <li>Culinary</li>
+          </ul>
+        </div>
+      </div>
+    </aside>
+
+    <!-- ===== Main content ===== -->
+    <main class="main">
+      <nav class="nav" aria-label="Sections">
+        <a href="#experience">Experience</a>
+        <a href="#education">Education</a>
+        <a href="#skills">Certification &amp; Skills</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="intro">
+        <h2>Accounting, financial reporting and audit quality professional.</h2>
+        <p>Experience spanning Big Four and international audit networks, state-owned enterprises and corporate finance — combining technical assurance expertise with hands-on leadership of accounting operations.</p>
+        <div class="stats">
+          <div class="stat"><strong>Since 2012</strong><span>In audit &amp; finance</span></div>
+          <div class="stat"><strong>20+</strong><span>Personnel led per engagement</span></div>
+          <div class="stat"><strong>CPA Australia</strong><span>Professional certification</span></div>
+        </div>
+      </div>
+
+      <section id="experience">
+        <h2 class="section-title">Experience</h2>
+        <div class="timeline">
+
+          <article class="entry current">
+            <h3 class="entry-title">Manager</h3>
+            <div class="entry-org">PT Korintiga Hutani (Oji Group)</div>
+            <div class="entry-date">October 2023 – Present <span class="badge">CURRENT</span></div>
+            <p>Lead and oversee daily accounting operations, monthly and annual financial reporting, investor relations reporting, cost analysis, and other management reporting requirements. Ensure the accuracy, timeliness, and compliance of financial information while providing financial insights to support management decision-making and business performance.</p>
+          </article>
+
+          <article class="entry current">
+            <h3 class="entry-title">Technical Advisor</h3>
+            <div class="entry-org">KAP Heliantono &amp; Rekan (Parker Russell)</div>
+            <div class="entry-date">October 2023 – Present <span class="badge">CURRENT</span></div>
+            <p>Positioned as technical assurance not limited to quality assurance but significant and high-risk issues occurring within the firm client’s engagements, both assurance and non-assurance (including ICoFR). Serving multiple clients ranging from SOE/BUMN, local government owned entities, and private entity clients.</p>
+          </article>
+
+          <article class="entry">
+            <h3 class="entry-title">Senior Manager</h3>
+            <div class="entry-org">KAP Amir Abadi Jusuf, Aryanto, Mawar &amp; Rekan (RSM Indonesia)</div>
+            <div class="entry-date">November 2016 – September 2023</div>
+            <p>Positioned as Quality Assurance Manager with multiple clients ranging from constructions, infrastructures, industrial estates, and power plants. Previously positioned as Audit Manager leading a team of 20 personnel on the audit of several state-owned enterprises.</p>
+          </article>
+
+          <article class="entry">
+            <h3 class="entry-title">Supervisor</h3>
+            <div class="entry-org">KAP Johannes Patricia Juara &amp; Rekan (INAA Group)</div>
+            <div class="entry-date">April 2014 – October 2016</div>
+            <p>Provide supervision regarding the audit plan, audit strategy and any additional audit procedure within the audit program.</p>
+          </article>
+
+          <article class="entry">
+            <h3 class="entry-title">Senior Auditor</h3>
+            <div class="entry-org">KAP Osman Bing Satrio &amp; Eny (Deloitte)</div>
+            <div class="entry-date">March 2012 – March 2014</div>
+            <p>Prepare, revise, and execute the audit plan, audit strategy and the audit program as guided and as required by the Firm.</p>
+          </article>
+
+        </div>
+      </section>
+
+      <section id="education">
+        <h2 class="section-title">Education</h2>
+        <div class="edu">
+          <h3>Bachelor of Business – Accounting</h3>
+          <div class="school">Monash University, Caulfield – Melbourne, Australia</div>
+          <div class="date">December 2008</div>
+        </div>
+        <div class="edu">
+          <h3>Diploma of Business – Accounting</h3>
+          <div class="school">Monash College, Clayton – Melbourne, Australia</div>
+          <div class="date">February 2007</div>
+        </div>
+      </section>
+
+      <section id="skills">
+        <h2 class="section-title">Certification &amp; Key Skills</h2>
+        <div class="skills">
+          <div class="skill">
+            <h4>Certification</h4>
+            <p>CPA Australia</p>
+          </div>
+          <div class="skill">
+            <h4>Financial Reporting Standards</h4>
+            <p>Completed multiple required courses including IFRS 9, IFRS 15, IFRS 16 and IFRS 18</p>
+          </div>
+          <div class="skill">
+            <h4>Productivity Tools</h4>
+            <p>MS Office (Excel, Word and PowerPoint)</p>
+          </div>
+          <div class="skill">
+            <h4>Full Stack Development</h4>
+            <p>Python, TypeScript, React &amp; Next.js, Node.js, and SQL (PostgreSQL)</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact">
+        <h2 class="section-title">Get in Touch</h2>
+        <p>For professional enquiries, please reach out via email at <a href="mailto:made_adi_laksmana@hotmail.com">made_adi_laksmana@hotmail.com</a> or by phone at <a href="tel:+6281287878189">0812 8787 8189</a>.</p>
+      </section>
+
+      <footer>
+        <span>&copy; <span id="year">2026</span> Made Adi Laksmana</span>
+        <span>Tangerang Selatan, Indonesia</span>
+      </footer>
+    </main>
+
+  </div>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Highlight the nav link for the section currently in view
+    const links = document.querySelectorAll(".nav a");
+    const sections = [...links].map(a => document.querySelector(a.getAttribute("href")));
+    function setActive() {
+      let current = sections[0];
+      for (const s of sections) {
+        if (s.getBoundingClientRect().top <= 120) current = s;
+      }
+      if (window.innerHeight + window.scrollY >= document.body.scrollHeight - 2) {
+        current = sections[sections.length - 1];
+      }
+      links.forEach(a => a.classList.toggle("active", a.getAttribute("href") === "#" + current.id));
+    }
+    window.addEventListener("scroll", setActive, { passive: true });
+    setActive();
+  </script>
+</body>
+</html>
