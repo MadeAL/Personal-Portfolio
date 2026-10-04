@@ -231,8 +231,16 @@
       background: var(--rule);
     }
 
+    .section-tagline {
+      margin: -10px 0 26px;
+      font-size: 14px;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
     .entry { position: relative; }
-    .entry + .entry { margin-top: 30px; }
+    .entry + .entry { margin-top: 38px; }
     .entry::before {
       content: "";
       position: absolute;
@@ -245,39 +253,43 @@
     .entry.current::before { background: var(--accent); }
 
     .entry-title {
-      font-size: 19px;
+      font-size: 21px;
       font-weight: 700;
       color: var(--ink);
-      text-transform: uppercase;
-      line-height: 1.35;
-    }
-    .entry-org {
-      font-size: 16px;
-      font-weight: 600;
-      color: var(--ink);
-      text-transform: uppercase;
+      line-height: 1.3;
     }
     .entry-date {
-      font-size: 17px;
-      font-weight: 300;
-      color: var(--text);
-      text-transform: uppercase;
-      margin: 2px 0 6px;
+      font-size: 15px;
+      color: var(--muted);
+      margin-top: 2px;
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 6px 14px;
       flex-wrap: wrap;
     }
     .badge {
       font-size: 11px;
       font-weight: 700;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.08em;
       color: #fff;
       background: var(--accent);
-      padding: 2px 8px;
-      border-radius: 2px;
+      padding: 2px 10px;
+      border-radius: 3px;
     }
-    .entry p { text-align: justify; }
+
+    .role { margin-top: 16px; }
+    .role + .role { margin-top: 22px; }
+    .entry-org {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--ink);
+      line-height: 1.35;
+    }
+    .entry-role {
+      font-size: 15px;
+      color: var(--accent);
+    }
+    .role p { margin-top: 6px; text-align: left; }
 
     /* Education */
     .edu + .edu { margin-top: 20px; }
@@ -341,7 +353,7 @@
       .main { --pad-x: 16px; }
       section { scroll-margin-top: 140px; }
       .stats, .skills { grid-template-columns: 1fr; }
-      .entry p, .side-section p { text-align: left; }
+      .side-section p { text-align: left; }
       .name { font-size: 25px; }
     }
 
@@ -350,6 +362,7 @@
       .page { margin: 0; box-shadow: none; }
       .nav { display: none; }
       .sidebar-inner { position: static; }
+      .entry { break-inside: avoid; }
     }
   </style>
 </head>
@@ -360,7 +373,7 @@
     <aside class="sidebar">
       <div class="sidebar-inner">
         <div class="photo-frame">
-          <img src="Update%20Photo.png" alt="Portrait of Made Adi Laksmana">
+          <img src="Pic%20Hand%20Drawing.png" alt="Hand-drawn portrait of Made Adi Laksmana">
         </div>
 
         <h1 class="name">Made Adi Laksmana</h1>
@@ -395,7 +408,8 @@
           <h2 class="side-title">Activities &amp; Interests</h2>
           <ul class="interest-list">
             <li>Independent Full Stack Developer enthusiast, learner and hobbyist</li>
-            <li>Books and Novels</li>
+            <li>Learning New Things</li>
+            <li>Jogging</li>
             <li>Travel</li>
             <li>Culinary</li>
           </ul>
@@ -423,42 +437,52 @@
       </div>
 
       <section id="experience">
-        <h2 class="section-title">Experience</h2>
+        <h2 class="section-title">Professional Experience</h2>
+        <p class="section-tagline">Accounting Leadership | Audit Quality | Technical Advisory</p>
         <div class="timeline">
 
           <article class="entry current">
-            <h3 class="entry-title">Manager</h3>
-            <div class="entry-org">PT Korintiga Hutani (Oji Group)</div>
-            <div class="entry-date">October 2023 – Present <span class="badge">CURRENT</span></div>
-            <p>Lead and oversee daily accounting operations, monthly and annual financial reporting, investor relations reporting, cost analysis, and other management reporting requirements. Ensure the accuracy, timeliness, and compliance of financial information while providing financial insights to support management decision-making and business performance.</p>
-          </article>
+            <h3 class="entry-title">Accounting Manager &amp; Technical Advisor</h3>
+            <div class="entry-date">October 2023 - Present <span class="badge">CURRENT</span></div>
 
-          <article class="entry current">
-            <h3 class="entry-title">Technical Advisor</h3>
-            <div class="entry-org">Parker Russell International</div>
-            <div class="entry-date">October 2023 – Present <span class="badge">CURRENT</span></div>
-            <p>Positioned as technical advisor not limited to quality improvement but including advocacy for significant and high-risk issues occurring within the firm client’s engagements, both assurance and non-assurance (including ICoFR). Serving multiple clients ranging from SOE/BUMN, local government owned entities, and private entity clients.</p>
+            <div class="role">
+              <h4 class="entry-org">PT Korintiga Hutani (Oji Group)</h4>
+              <div class="entry-role">Accounting Manager | Full-time | On-site</div>
+              <p>Lead daily accounting operations, monthly and annual financial reporting, investor relations reporting, cost analysis, and management reporting. Ensure accurate, timely, and compliant financial information, translating financial results into insights that support management decisions and business performance.</p>
+            </div>
+
+            <div class="role">
+              <h4 class="entry-org">Reputable International Consulting Firm</h4>
+              <div class="entry-role">Technical Advisor | Concurrent advisory role</div>
+              <p>Provide technical guidance on engagement quality and the resolution of high-profile challenges across assurance and non-assurance engagements, including internal control over financial reporting (ICoFR). Advise on engagements involving state-owned enterprises (BUMN), local government-owned entities, and private-sector clients.</p>
+            </div>
           </article>
 
           <article class="entry">
             <h3 class="entry-title">Senior Manager</h3>
-            <div class="entry-org">KAP Amir Abadi Jusuf, Aryanto, Mawar &amp; Rekan (RSM Indonesia)</div>
-            <div class="entry-date">November 2016 – September 2023</div>
-            <p>Positioned as Quality Assurance Manager with multiple clients ranging from constructions, infrastructures, industrial estates, and power plants. Previously positioned as Audit Manager leading a team of 20 personnel on the audit of several state-owned enterprises.</p>
+            <div class="entry-date">November 2016 - September 2023</div>
+            <div class="role">
+              <h4 class="entry-org">RSM International</h4>
+              <p>Managed quality assurance for clients in construction, infrastructure, industrial estates, and power generation. Previously served as Audit Manager, leading a 20-person team on audits of several state-owned enterprises.</p>
+            </div>
           </article>
 
           <article class="entry">
-            <h3 class="entry-title">Supervisor</h3>
-            <div class="entry-org">KAP Johannes Patricia Juara &amp; Rekan (INAA Group)</div>
-            <div class="entry-date">April 2014 – October 2016</div>
-            <p>Provide supervision regarding the audit plan, audit strategy and any additional audit procedure within the audit program.</p>
+            <h3 class="entry-title">Audit Supervisor</h3>
+            <div class="entry-date">April 2014 - October 2016</div>
+            <div class="role">
+              <h4 class="entry-org">International Networks of Accountants &amp; Auditors</h4>
+              <p>Supervised audit planning, audit strategy, and audit programmes, providing guidance on additional procedures required for each engagement.</p>
+            </div>
           </article>
 
           <article class="entry">
             <h3 class="entry-title">Senior Auditor</h3>
-            <div class="entry-org">KAP Osman Bing Satrio &amp; Eny (Deloitte)</div>
-            <div class="entry-date">March 2012 – March 2014</div>
-            <p>Prepare, revise, and execute the audit plan, audit strategy and the audit program as guided and as required by the Firm.</p>
+            <div class="entry-date">March 2012 - March 2014</div>
+            <div class="role">
+              <h4 class="entry-org">Deloitte</h4>
+              <p>Prepared, refined, and executed audit plans, strategies, and programmes in accordance with firm methodology and engagement requirements.</p>
+            </div>
           </article>
 
         </div>
